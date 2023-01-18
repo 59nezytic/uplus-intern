@@ -1,5 +1,6 @@
-FROM openjdk:11.0-jdk
-VOLUME /tmp
-ADD ./build/libs/cafe-svc-0.0.1-SNAPSHOT.jar app.jar
-ENV JAVA_OPTS=""
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM ubuntu:18.04
+RUN apt-get update
+RUN apt-get install apache2 -y
+COPY index.html /var/www/html
+EXPOSE 80
+CMD apachectl -DFOREGROUND

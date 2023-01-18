@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eks-deploy
+  name: cloud-l3-project-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: eks
+      app: cloud-l3-project
   template:
     metadata:
       labels:
-        app: eks
+        app: cloud-l3-project
     spec:
       containers:
-        - name: eks
-          image: AWS_ECR_URI
+        - name: cloud-l3-project
+          image: AWS_ECR_URI #buildspec.yml에서 ECR의 URI:TAG 로 치환해줌
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           imagePullPolicy: Always
           env:
             - name: DATE
