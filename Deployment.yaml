@@ -23,6 +23,6 @@ spec:
               value: 'DATE_STRING'
           resources:
             limits:
-              cpu: 300m
+              cpu: 100m
             requests:
-              cpu: 200m
+              cpu: 50m
