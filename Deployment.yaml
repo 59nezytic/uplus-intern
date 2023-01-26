@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: eks
+      app: uplus
   template:
     metadata:
       labels:
-        app: eks
+        app: uplus
     spec:
       containers:
         - name: lg-uplus
